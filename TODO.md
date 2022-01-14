@@ -1,0 +1,11 @@
+- Configure LSP
+- Configure Telescope
+- Configure Dadbod
+- Language files root ftplugin directory
+- Colorscheme
+- Install language servers
+- Bufferline separator clipping
+- LSP keymaps
+- Trouble keymaps
+- Configure / Setup DAP
+- Configure Which-Key
