@@ -67,6 +67,14 @@ return require('packer').startup {
     --colorschemes
     use 'matsuuu/pinkmare'
     use 'ful1e5/onedark.nvim'
+    use 'folke/tokyonight.nvim'
+    use 'rockerBOO/boo-colorscheme-nvim'
+    use 'torcor-dev/purple_winter'
+    use 'shaunsingh/nord.nvim'
+    use {
+        "mcchrish/zenbones.nvim",
+        requires = "rktjmp/lush.nvim"
+    }
 
     use { "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } }
 
@@ -80,5 +88,8 @@ return require('packer').startup {
     use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
     use "rhysd/committia.vim"
     use "sindrets/diffview.nvim"
+
+    use "rktjmp/shipwright.nvim"
+
   end
 }

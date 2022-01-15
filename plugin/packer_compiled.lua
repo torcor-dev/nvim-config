@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["boo-colorscheme-nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/boo-colorscheme-nvim",
+    url = "https://github.com/rockerBOO/boo-colorscheme-nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -163,6 +168,11 @@ _G.packer_plugins = {
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   ["markdown-preview.nvim"] = {
     commands = { "MarkdownPreview" },
     loaded = false,
@@ -175,6 +185,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/neogit",
     url = "https://github.com/TimUntersberger/neogit"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -241,6 +256,16 @@ _G.packer_plugins = {
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  purple_winter = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/purple_winter",
+    url = "https://github.com/torcor-dev/purple_winter"
+  },
+  ["shipwright.nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/shipwright.nvim",
+    url = "https://github.com/rktjmp/shipwright.nvim"
+  },
   ["telescope-dap.nvim"] = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
@@ -250,6 +275,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
   },
   ["trouble.nvim"] = {
     loaded = true,
@@ -278,6 +308,11 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/fu/.local/share/nvim/site/pack/packer/opt/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
+  },
+  ["zenbones.nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 

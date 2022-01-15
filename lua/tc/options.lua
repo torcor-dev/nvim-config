@@ -1,7 +1,4 @@
-vim.g.loaded_matchparen = 1
-
 local opt = vim.opt
-
 opt.clipboard = 'unnamedplus'
 opt.relativenumber = true
 opt.ignorecase = true
@@ -10,5 +7,10 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.scrolloff = 15
+opt.showmatch = true
 
-require('onedark').setup()
+opt.termguicolors = true
+opt.background = "dark"
+vim.cmd('colorscheme pinkbones')
+vim.cmd('highlight Normal guibg=none')
+vim.cmd('highlight NonText guibg=none')
