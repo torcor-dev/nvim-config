@@ -39,7 +39,7 @@ cmp.setup {
     -- ["<tab>"] = false,
     ["<tab>"] = cmp.config.disable,
 
-    ["<c-q>"] = cmp.mapping.confirm {
+    ["<c-j>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },

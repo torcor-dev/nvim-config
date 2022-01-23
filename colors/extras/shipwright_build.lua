@@ -9,7 +9,7 @@ local palette = util.palette_extend({
 		fg = hsluv "#EA93D0", -- self, functions
 		rose = hsluv "#C45E9E", -- definitions / error
 		leaf = hsluv "#FF8AB3",
-		wood = hsluv "#D17FC8", -- warning
+		wood = hsluv "#D25FC5", -- warning
 		water = hsluv "#FF65A8", --class instance
 		blossom = hsluv "#E794D0",
 		sky = hsluv "#FF74FD",
@@ -20,8 +20,8 @@ run(palette,
     return {
       fg = p.fg,
       bg = p.bg,
-      cursor_fg = "#ffffff",
-      cursor_bg = "#000000",
+      cursor_fg = p.bg,
+      cursor_bg = p.fg,
       black = p.bg,
       red = p.rose,
       green = p.leaf,

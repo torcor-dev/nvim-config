@@ -54,6 +54,7 @@ nmap { '<leader>fr', builtin.registers }
 nmap { '<leader>qf', builtin.quickfix }
 nmap { '<leader>rg', builtin.live_grep }
 nmap { '<leader>*', builtin.grep_string }
+nmap { '<c-g><c-r>', builtin.command_history }
 
 add_cmd('Rg', builtin.live_grep)
 add_cmd('Registers', builtin.registers)

@@ -6,19 +6,13 @@ local hsluv = lush.hsluv -- Human-friendly hsl
 local util = require "zenbones.util"
 
 local bg = vim.opt.background:get()
+local base_colors = require("tc.palettes.pink")
+for k, v in pairs(base_colors) do
+  base_colors[k] = hsluv(v)
+end
 
 -- Define a palette. Use `palette_extend` to fill unspecified colors
-local palette = util.palette_extend({
-		bg = hsluv "#250014",
-		--bg = hsluv "#250D1A",
-		fg = hsluv "#EA93D0", -- self, functions
-		rose = hsluv "#C45E9E", -- definitions / error
-		leaf = hsluv "#FF8AB3",
-		wood = hsluv "#D17FC8", -- warning
-		water = hsluv "#FF65A8", --class instance
-		blossom = hsluv "#E794D0",
-		sky = hsluv "#FF74FD",
-	}, bg)
+local palette = util.palette_extend(base_colors, bg)
 
 -- Generate the lush specs using the generator util
 local generator = require "zenbones.specs"
@@ -36,7 +30,11 @@ local specs = lush.extends({ base_specs }).with(function()
 		Special { fg = palette.water },
 		Type { fg = palette.sky, },
         String { fg = palette.leaf } ,
-        MatchParen {gui='bold,underline'},
+
+        -- As far as MatchParen or Cursor colors goes
+        -- Alacritty color config for cursor overwrites any config for current cursor
+
+        --MatchParen {gui='bold,underline'},
         --Search { bg = "#8c2eea", fg = palette.rose, },
         --Cursor {gui='bold'},
         --lCursor {gui='bold'},
@@ -50,3 +48,6 @@ lush(specs)
 
 -- Optionally set term colors
 require("zenbones.term").apply_colors(palette)
+
+--vim.cmd([[highlight BufferLineFill guibg=]] .. palette.rose)
+--vim.cmd([[highlight BufferLineTab guibg=]] .. palette.rose)

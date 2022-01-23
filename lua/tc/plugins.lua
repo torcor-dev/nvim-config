@@ -34,6 +34,8 @@ return require('packer').startup {
     use "L3MON4D3/LuaSnip"
     use "onsails/lspkind-nvim"
 
+    use "github/copilot.vim"
+
     use "mfussenegger/nvim-dap"
     use "rcarriga/nvim-dap-ui"
     use "theHamsta/nvim-dap-virtual-text"
@@ -90,6 +92,9 @@ return require('packer').startup {
     use "sindrets/diffview.nvim"
 
     use "rktjmp/shipwright.nvim"
+
+    use "bfredl/nvim-luadev"
+    use "chrisbra/Colorizer"
 
   end
 }

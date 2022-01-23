@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  Colorizer = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/Colorizer",
+    url = "https://github.com/chrisbra/Colorizer"
+  },
   ["FTerm.nvim"] = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/FTerm.nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/committia.vim",
     url = "https://github.com/rhysd/committia.vim"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -225,6 +235,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-luadev"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/nvim-luadev",
+    url = "https://github.com/bfredl/nvim-luadev"
   },
   ["nvim-treesitter"] = {
     loaded = true,

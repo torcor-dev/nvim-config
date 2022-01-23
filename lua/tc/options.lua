@@ -12,5 +12,4 @@ opt.showmatch = true
 opt.termguicolors = true
 opt.background = "dark"
 vim.cmd('colorscheme pinkbones')
-vim.cmd('highlight Normal guibg=none')
-vim.cmd('highlight NonText guibg=none')
+--vim.cmd('highlight Normal guibg=none')
