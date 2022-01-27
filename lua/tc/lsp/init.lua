@@ -1,5 +1,5 @@
 local buf_imap = require('tc.helpers.keymap').buf_imap
-local buf_nmap = require('tc.helpers.keymap').buf_nmap
+local buf_nmap = require('tc.helpers.keymap').wk_buf_nmap
 local telescope = require('telescope.builtin')
 
 local nvim_status = require('lsp-status')
@@ -22,23 +22,26 @@ local custom_init = function(client)
   client.config.flags.allow_incremental_sync = true
 end
 
+local TAG = "[LSP]"
+
 local custom_attach = function(client)
   nvim_status.on_attach(client)
 
   buf_imap { '<c-s>', vim.lsp.buf.signature_help }
-  buf_nmap { '<leader>cr', vim.lsp.buf.rename }
-  buf_nmap { '<leader>ca', telescope.lsp_code_actions }
 
-  buf_nmap { 'gd', vim.lsp.buf.definition }
-  buf_nmap { 'gD', vim.lsp.buf.declaration }
-  buf_nmap { 'gT', vim.lsp.buf.type_definition }
+  buf_nmap { keys='<leader>cr', action=vim.lsp.buf.rename, name="Rename", tag=TAG }
+  buf_nmap { keys='<leader>ca', action=telescope.lsp_code_actions, name="Code actions", tag=TAG }
 
-  buf_nmap { 'gr', telescope.lsp_references }
-  buf_nmap { 'gI', telescope.lsp_implementations }
-  buf_nmap { '<leader>fd', doc_diagnostics }
-  buf_nmap { '<leader>fw', ws_diagnostics }
+  buf_nmap { keys='gd', action=vim.lsp.buf.definition, name="Go to definition", tag=TAG }
+  buf_nmap { keys='gD', action=vim.lsp.buf.declaration , name="Go to declaration", tag=TAG }
+  buf_nmap { keys='gT', action=vim.lsp.buf.type_definition , name="Go to type definition", tag=TAG }
 
-  buf_nmap { 'K', vim.lsp.buf.hover }
+  buf_nmap { keys='gr', action=telescope.lsp_references, name="Go to references", tag=TAG }
+  buf_nmap { keys='gI', action=telescope.lsp_implementations, name="Go to implementations", tag=TAG }
+  buf_nmap { keys='<leader>fd', action=doc_diagnostics, name="Document diagnostics", tag=TAG }
+  buf_nmap { keys='<leader>fw', action=ws_diagnostics, name="Workspace diagnostics", tag=TAG }
+
+  buf_nmap { keys='K', action=vim.lsp.buf.hover, name="Help", tag=TAG }
 
   vim.bo.omnifunc = 'v:lua.vim.lsp.omnifunc'
 

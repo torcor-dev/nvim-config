@@ -9,6 +9,12 @@ return require('packer').startup {
     use 'williamboman/nvim-lsp-installer'
     use "wbthomason/lsp-status.nvim"
     use {
+      "j-hui/fidget.nvim",
+      config = function()
+        require("fidget").setup {}
+      end
+    }
+    use {
       "ericpubu/lsp_codelens_extensions.nvim",
       config = function()
         require("codelens_extensions").setup()
@@ -95,6 +101,8 @@ return require('packer').startup {
 
     use "bfredl/nvim-luadev"
     use "chrisbra/Colorizer"
+
+    use "folke/which-key.nvim"
 
   end
 }

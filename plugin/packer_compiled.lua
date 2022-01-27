@@ -149,6 +149,12 @@ _G.packer_plugins = {
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["fidget.nvim"] = {
+    config = { "\27LJ\1\0028\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\vfidget\frequire\0" },
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["git-messenger.vim"] = {
     keys = { { "", "<Plug>(git-messenger)" } },
     loaded = false,
@@ -324,6 +330,11 @@ _G.packer_plugins = {
     path = "/home/fu/.local/share/nvim/site/pack/packer/opt/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
   },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/fu/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
+  },
   ["zenbones.nvim"] = {
     loaded = true,
     path = "/home/fu/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
@@ -332,6 +343,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: fidget.nvim
+time([[Config for fidget.nvim]], true)
+try_loadstring("\27LJ\1\0028\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\vfidget\frequire\0", "config", "fidget.nvim")
+time([[Config for fidget.nvim]], false)
 -- Config for: lsp_codelens_extensions.nvim
 time([[Config for lsp_codelens_extensions.nvim]], true)
 try_loadstring("\27LJ\1\2A\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\24codelens_extensions\frequire\0", "config", "lsp_codelens_extensions.nvim")

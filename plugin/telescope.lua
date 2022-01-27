@@ -27,7 +27,7 @@ require('telescope').setup{
 
 local builtin = require('telescope.builtin')
 local add_cmd = require('tc.helpers.cmd').add_cmd
-local nmap = require('tc.helpers.keymap').nmap
+local nmap = require('tc.helpers.keymap').wk_nmap
 
 local find = function (opts)
   opts = opts or {
@@ -44,18 +44,18 @@ local project_files = function()
   end
 end
 
+local TAG = "[Telescope]"
 
-nmap { '<leader><leader>', project_files }
-nmap { '<leader>ff', find }
-nmap { '<leader>fb', builtin.buffers }
-nmap { '<leader>ft', builtin.tags }
-nmap { '<leader>fm', builtin.marks }
-nmap { '<leader>fr', builtin.registers }
-nmap { '<leader>qf', builtin.quickfix }
-nmap { '<leader>rg', builtin.live_grep }
-nmap { '<leader>*', builtin.grep_string }
-nmap { '<c-g><c-r>', builtin.command_history }
+nmap { keys = '<leader><leader>', action = project_files, name = "Project files", tag = TAG }
+nmap { keys = '<leader>ff', action = find, name = "Find files", tag = TAG }
+nmap { keys = '<leader>fb', action = builtin.buffers, name = "Buffers", tag = TAG }
+nmap { keys = '<leader>ft', action = builtin.tags, name = "Tags", tag = TAG }
+nmap { keys = '<leader>fm', action = builtin.marks, name = "Marks", tag = TAG }
+nmap { keys = '<leader>fr', action = builtin.registers, name = "Registers", tag = TAG }
+nmap { keys = '<leader>qf', action = builtin.quickfix, name = "Quickfix", tag = TAG }
+nmap { keys = '<leader>rg', action = builtin.live_grep, name = "Live grep", tag = TAG }
+nmap { keys = '<leader>*', action = builtin.grep_string, name = "Grep string", tag = TAG }
+nmap { keys = '<c-g><c-r>', action = builtin.command_history, name = "Command history", tag = TAG }
 
 add_cmd('Rg', builtin.live_grep)
 add_cmd('Registers', builtin.registers)
-
