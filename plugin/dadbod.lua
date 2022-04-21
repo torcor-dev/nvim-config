@@ -1,4 +1,4 @@
-vim.cmd "luafile ~/.secrets/vimdbs.lua"
+--vim.cmd "luafile ~/.secrets/vimdbs.lua"
 
 local nmap = require('tc.helpers.keymap').wk_nmap
 local buf_nmap = require('tc.helpers.keymap').wk_buf_nmap
