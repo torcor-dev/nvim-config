@@ -37,7 +37,15 @@ cmp.setup {
     },
 
     -- ["<tab>"] = false,
-    ["<tab>"] = cmp.config.disable,
+    -- ["<tab>"] = cmp.config.disable,
+    ["<tab>"] = cmp.mapping.select_next_item {
+      behavior = cmp.SelectBehavior.Insert,
+      select = true,
+    },
+    ["<S-tab>"] = cmp.mapping.select_prev_item {
+      behavior = cmp.SelectBehavior.Insert,
+      select = true,
+    },
 
     ["<c-j>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
