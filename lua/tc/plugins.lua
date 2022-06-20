@@ -40,7 +40,7 @@ return require('packer').startup {
     use "L3MON4D3/LuaSnip"
     use "onsails/lspkind-nvim"
 
-    use "github/copilot.vim"
+    --use "github/copilot.vim"
 
     use "mfussenegger/nvim-dap"
     use "rcarriga/nvim-dap-ui"
