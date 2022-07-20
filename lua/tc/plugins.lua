@@ -7,7 +7,7 @@ return require('packer').startup {
 
     use "neovim/nvim-lspconfig"
     use 'williamboman/nvim-lsp-installer'
-    use "wbthomason/lsp-status.nvim"
+    --use "wbthomason/lsp-status.nvim"
     use {
       "j-hui/fidget.nvim",
       config = function()

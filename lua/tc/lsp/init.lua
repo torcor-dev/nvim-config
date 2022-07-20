@@ -2,12 +2,6 @@ local buf_imap = require('tc.helpers.keymap').buf_imap
 local buf_nmap = require('tc.helpers.keymap').wk_buf_nmap
 local telescope = require('telescope.builtin')
 
-local nvim_status = require('lsp-status')
-local status = require('tc.lsp.status')
-status.activate()
-
-
-
 local doc_diagnostics = function()
   telescope.diagnostics({bufnr=0})
 end
@@ -25,8 +19,6 @@ end
 local TAG = "[LSP]"
 
 local custom_attach = function(client)
-  nvim_status.on_attach(client)
-
   buf_imap { '<c-s>', vim.lsp.buf.signature_help }
 
   buf_nmap { keys='<leader>cr', action=vim.lsp.buf.rename, name="Rename", tag=TAG }
@@ -68,7 +60,6 @@ local custom_attach = function(client)
 end
 
 local updated_capabilities = vim.lsp.protocol.make_client_capabilities()
-updated_capabilities = vim.tbl_deep_extend("keep", updated_capabilities, nvim_status.capabilities)
 updated_capabilities.textDocument.codeLens = { dynamicRegistration = false }
 updated_capabilities = require("cmp_nvim_lsp").update_capabilities(updated_capabilities)
 
