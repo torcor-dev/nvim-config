@@ -28,6 +28,7 @@ local servers = {
   omnisharp = {},
   tsserver = {},
   tailwindcss = {},
+  jsonls = {},
 }
 
 for name, config in pairs(servers) do

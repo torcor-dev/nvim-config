@@ -32,6 +32,8 @@ local custom_attach = function(client)
   buf_nmap { keys='gI', action=telescope.lsp_implementations, name="Go to implementations", tag=TAG }
   buf_nmap { keys='<leader>fd', action=doc_diagnostics, name="Document diagnostics", tag=TAG }
   buf_nmap { keys='<leader>fw', action=ws_diagnostics, name="Workspace diagnostics", tag=TAG }
+  buf_nmap { keys=']d', action=vim.diagnostic.goto_next, name="Go to next diagnostic", tag=TAG }
+  buf_nmap { keys='[d', action=vim.diagnostic.goto_prev, name="Go to previous diagnostic", tag=TAG }
 
   buf_nmap { keys='K', action=vim.lsp.buf.hover, name="Help", tag=TAG }
 
