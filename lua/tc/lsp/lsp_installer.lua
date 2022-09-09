@@ -27,8 +27,10 @@ local servers = {
   gopls = {},
   omnisharp = {},
   tsserver = {},
+  eslint = {},
   tailwindcss = {},
   jsonls = {},
+  cssls = {},
 }
 
 for name, config in pairs(servers) do

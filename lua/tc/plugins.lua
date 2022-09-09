@@ -7,6 +7,7 @@ return require('packer').startup {
 
     use "neovim/nvim-lspconfig"
     use 'williamboman/nvim-lsp-installer'
+    use "jose-elias-alvarez/null-ls.nvim"
     --use "wbthomason/lsp-status.nvim"
     use {
       "j-hui/fidget.nvim",
@@ -39,6 +40,8 @@ return require('packer').startup {
 
     use "L3MON4D3/LuaSnip"
     use "onsails/lspkind-nvim"
+
+    use "mattn/emmet-vim"
 
     --use "github/copilot.vim"
 
@@ -73,6 +76,8 @@ return require('packer').startup {
     use { "kristijanhusak/vim-dadbod-ui" }
 
     --colorschemes
+    --
+    use 'shaunsingh/solarized.nvim'
     use 'matsuuu/pinkmare'
     use 'ful1e5/onedark.nvim'
     use 'folke/tokyonight.nvim'

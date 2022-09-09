@@ -22,7 +22,9 @@ local custom_attach = function(client)
   buf_imap { '<c-s>', vim.lsp.buf.signature_help }
 
   buf_nmap { keys='<leader>cr', action=vim.lsp.buf.rename, name="Rename", tag=TAG }
-  buf_nmap { keys='<leader>ca', action=telescope.lsp_code_actions, name="Code actions", tag=TAG }
+  buf_nmap { keys='<leader>cf', action=vim.lsp.buf.format, name="Format buffer", tag=TAG }
+  buf_nmap { keys='<leader>cb', action=telescope.lsp_code_actions, name="Code actions", tag=TAG }
+  buf_nmap { keys='<leader>ca', action=vim.lsp.buf.code_action, name="Code actions", tag=TAG }
 
   buf_nmap { keys='gd', action=vim.lsp.buf.definition, name="Go to definition", tag=TAG }
   buf_nmap { keys='gD', action=vim.lsp.buf.declaration , name="Go to declaration", tag=TAG }

@@ -1,7 +1,3 @@
-if require('tc.first_load')() then
-	return
-end
-
 vim.g.mapleader = ' '
 
 require('tc.keymaps')
