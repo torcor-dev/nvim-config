@@ -51,7 +51,7 @@ nmap {
 }
 
 nmap {
-  keys="<leader>sl",
+  keys="<leader>dl",
   action=function ()
     vim.diagnostic.open_float(0, {
       scope = "line",

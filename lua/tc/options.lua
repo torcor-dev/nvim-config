@@ -9,12 +9,12 @@ opt.shiftwidth = 4
 opt.scrolloff = 15
 opt.showmatch = true
 
-opt.termguicolors = true
-opt.background = "dark"
+vim.opt.termguicolors = true
+vim.opt.background = "dark"
 
 if os.getenv("USER") == "fu" then
   vim.cmd('colorscheme pinkbones')
+  vim.cmd('highlight Normal guibg=none')
 else
   vim.cmd('colorscheme nord')
 end
-

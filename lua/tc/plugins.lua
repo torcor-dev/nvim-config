@@ -4,6 +4,7 @@ return require('packer').startup {
   function(use)
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     use "neovim/nvim-lspconfig"
     use 'williamboman/nvim-lsp-installer'
@@ -26,8 +27,13 @@ return require('packer').startup {
       "folke/trouble.nvim",
       requires = "kyazdani42/nvim-web-devicons",
     }
-
-    -- Sources
+    use {
+      "jiaoshijie/undotree",
+      requires = {
+        "nvim-lua/plenary.nvim",
+      },
+    }
+    -- Source
     use "hrsh7th/nvim-cmp"
     -- use "hrsh7th/cmp-cmdline"
     use "hrsh7th/cmp-buffer"
@@ -88,6 +94,7 @@ return require('packer').startup {
         "mcchrish/zenbones.nvim",
         requires = "rktjmp/lush.nvim"
     }
+    use 'sam4llis/nvim-tundra'
 
     use { "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } }
 
