@@ -11,5 +11,10 @@ opt.showmatch = true
 
 opt.termguicolors = true
 opt.background = "dark"
-vim.cmd('colorscheme nord')
---vim.cmd('highlight Normal guibg=none')
+
+if os.getenv("USER") == "fu" then
+  vim.cmd('colorscheme pinkbones')
+else
+  vim.cmd('colorscheme nord')
+end
+
