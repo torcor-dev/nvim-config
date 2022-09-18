@@ -6,10 +6,10 @@ return require('packer').startup {
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/nvim-treesitter-context'
 
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
-    use 'williamboman/nvim-lsp-installer'
     use "jose-elias-alvarez/null-ls.nvim"
-    --use "wbthomason/lsp-status.nvim"
     use {
       "j-hui/fidget.nvim",
       config = function()

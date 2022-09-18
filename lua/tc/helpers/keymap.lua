@@ -43,7 +43,7 @@ end
 
 M.wk_nmap = function(mapping)
   if not wk_loaded then
-    M.buf_nmap({mapping.keys, mapping.action, mapping.opts})
+    M.nmap({mapping.keys, mapping.action, mapping.opts})
     return
   end
   register(mapping)
@@ -61,6 +61,17 @@ M.wk_buf_nmap = function(mapping)
 
   mapping.opts.buffer = 0
   register(mapping)
+end
+
+M.wk_map = function(modes, mapping)
+  for _, m in pairs(modes) do
+    mapping.opts = { mode = m }
+    if wk_loaded then
+      register(mapping)
+    else
+      M._map({mapping.keys, mapping.action, mapping.opts})
+    end
+  end
 end
 
 return M

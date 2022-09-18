@@ -1,41 +1,10 @@
-require("nvim-lsp-installer").setup {}
-local lspconfig = require("lspconfig")
+require("mason").setup()
+local config = require("mason-lspconfig")
 local lsp = require('tc.lsp')
 
--- local null_ls_formatting = function(client)
---   client.server_capabilities.document_formatting = false
---   client.server_capabilities.document_range_formatting = false
--- end
-
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
-local servers = {
-  sumneko_lua = {
-    settings = {
-      Lua = {
-        runtime = { version = "LuaJIT", path = runtime_path },
-        diagnostics = { globals = { "vim" } },
-        workspace = {
-          library = vim.api.nvim_get_runtime_file("", true),
-        },
-      },
-    },
-  },
-  pyright = {},
-  gopls = {},
-  omnisharp = {},
-  tsserver = {},
-  eslint = {},
-  tailwindcss = {},
-  jsonls = {},
-  cssls = {},
-}
-
-for name, config in pairs(servers) do
-  for k, v in pairs(lsp) do
-    config[k] = v
+config.setup {}
+config.setup_handlers({
+  function(server)
+    require("lspconfig")[server].setup(lsp)
   end
-  lspconfig[name].setup(config)
-end
+})

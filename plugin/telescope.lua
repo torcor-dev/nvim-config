@@ -32,7 +32,7 @@ local nmap = require('tc.helpers.keymap').wk_nmap
 local find = function (opts)
   opts = opts or {
      no_ignore = true,
-     hidden = true,
+     hidden = false,
   }
   builtin.find_files(opts)
 end

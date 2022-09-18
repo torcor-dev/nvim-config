@@ -1,6 +1,7 @@
 local opt = vim.opt
-opt.clipboard = 'unnamedplus'
+--opt.clipboard = 'unnamedplus'
 opt.relativenumber = true
+opt.number = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.expandtab = true
@@ -10,6 +11,7 @@ opt.scrolloff = 15
 opt.showmatch = true
 opt.signcolumn = "yes"
 opt.colorcolumn = "0"
+opt.timeoutlen = 500
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
