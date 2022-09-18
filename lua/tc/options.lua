@@ -8,6 +8,8 @@ opt.tabstop = 4
 opt.shiftwidth = 4
 opt.scrolloff = 15
 opt.showmatch = true
+opt.signcolumn = "yes"
+opt.colorcolumn = "0"
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
