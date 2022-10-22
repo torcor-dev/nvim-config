@@ -16,12 +16,6 @@ return require("packer").startup({
 				require("fidget").setup({})
 			end,
 		})
-		use({
-			"ericpubu/lsp_codelens_extensions.nvim",
-			config = function()
-				require("codelens_extensions").setup()
-			end,
-		})
 
 		use({
 			"folke/trouble.nvim",
@@ -35,7 +29,6 @@ return require("packer").startup({
 		})
 		-- Source
 		use("hrsh7th/nvim-cmp")
-		-- use "hrsh7th/cmp-cmdline"
 		use("hrsh7th/cmp-buffer")
 		use("hrsh7th/cmp-path")
 		use("hrsh7th/cmp-nvim-lua")
@@ -49,16 +42,11 @@ return require("packer").startup({
 
 		use("mattn/emmet-vim")
 
-		--use "github/copilot.vim"
-
 		use("mfussenegger/nvim-dap")
 		use("rcarriga/nvim-dap-ui")
 		use("theHamsta/nvim-dap-virtual-text")
 		use("mfussenegger/nvim-dap-python")
 		use("nvim-telescope/telescope-dap.nvim")
-
-		-- Comparators
-		use("lukas-reineke/cmp-under-comparator")
 
 		use({
 			"nvim-telescope/telescope.nvim",
@@ -82,7 +70,6 @@ return require("packer").startup({
 		use({ "kristijanhusak/vim-dadbod-ui" })
 
 		--colorschemes
-		--
 		use("shaunsingh/solarized.nvim")
 		use("matsuuu/pinkmare")
 		use("ful1e5/onedark.nvim")
@@ -103,7 +90,14 @@ return require("packer").startup({
 			keys = "<Plug>(git-messenger)",
 		})
 
-		use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" })
+		use({
+			"iamcco/markdown-preview.nvim",
+			run = "cd app && npm install",
+			setup = function()
+				vim.g.mkdp_filetypes = { "markdown" }
+			end,
+			ft = { "markdown" },
+		})
 
 		use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 		use("rhysd/committia.vim")
