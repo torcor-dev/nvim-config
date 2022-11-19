@@ -12,6 +12,9 @@ opt.showmatch = true
 opt.signcolumn = "yes"
 opt.colorcolumn = "0"
 opt.timeoutlen = 500
+opt.cursorline = true
+
+opt.undofile = true
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
