@@ -108,6 +108,7 @@ return require("packer").startup({
     })
 
     use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
+    use { 'lewis6991/gitsigns.nvim' }
     use("rhysd/committia.vim")
     use("sindrets/diffview.nvim")
 
