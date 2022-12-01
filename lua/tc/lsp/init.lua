@@ -1,5 +1,6 @@
 local buf_imap = require("tc.helpers.keymap").buf_imap
 local buf_nmap = require("tc.helpers.keymap").wk_buf_nmap
+local buf_map = require("tc.helpers.keymap").wk_map
 local telescope = require("telescope.builtin")
 
 local doc_diagnostics = function()
