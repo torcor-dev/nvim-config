@@ -1,27 +1,31 @@
-local opt = vim.opt
 --opt.clipboard = 'unnamedplus'
-opt.relativenumber = true
-opt.number = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.expandtab = true
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.scrolloff = 15
-opt.showmatch = true
-opt.signcolumn = "yes"
-opt.colorcolumn = "0"
-opt.timeoutlen = 500
-opt.cursorline = true
+vim.opt.relativenumber = true
+vim.opt.number = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
-opt.undofile = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+
+vim.opt.scrolloff = 15
+vim.opt.showmatch = true
+vim.opt.signcolumn = "yes"
+vim.opt.colorcolumn = "0"
+vim.opt.timeoutlen = 500
+vim.opt.cursorline = true
+
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undofile = true
 
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
 if os.getenv("USER") == "fu" then
-  vim.cmd('colorscheme pinkbones')
-  vim.cmd('highlight Normal guibg=none')
+	vim.cmd("colorscheme pinkbones")
+	vim.cmd("highlight Normal guibg=none")
 else
-  vim.cmd('colorscheme tokyonight')
+	vim.cmd("colorscheme tokyonight")
 end

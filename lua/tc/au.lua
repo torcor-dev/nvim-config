@@ -13,20 +13,20 @@ vim.cmd([[
 ]])
 
 autocmd("TextYankPost", {
-	group = yank_group,
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({
-			higroup = "IncSearch",
-			timeout = 100,
-		})
-	end,
+  group = yank_group,
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "IncSearch",
+      timeout = 100,
+    })
+  end,
 })
 
 autocmd("BufWritePre", {
-	group = fmt_onsave_group,
-	pattern = { "*.go", "*.lua", "*tsx", "*.ts" },
-	callback = function()
-		vim.lsp.buf.format()
-	end,
+  group = fmt_onsave_group,
+  pattern = { "*.go", "*.lua" },
+  callback = function()
+    vim.lsp.buf.format()
+  end,
 })
