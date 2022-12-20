@@ -109,6 +109,7 @@ return require("packer").startup({
 			ft = { "markdown" },
 		})
 
+		use({ "tpope/vim-fugitive" })
 		use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
 		use({ "lewis6991/gitsigns.nvim" })
 		use("rhysd/committia.vim")
