@@ -17,7 +17,6 @@ local custom_init = function(client)
 end
 
 local TAG = "[LSP]"
-
 local custom_attach = function(client)
 	buf_imap({ "<c-s>", vim.lsp.buf.signature_help })
 

@@ -23,9 +23,4 @@ vim.opt.undofile = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
-if os.getenv("USER") == "fu" then
-	vim.cmd("colorscheme pinkbones")
-	vim.cmd("highlight Normal guibg=none")
-else
-	vim.cmd("colorscheme tokyonight")
-end
+vim.cmd("colorscheme tokyonight")
