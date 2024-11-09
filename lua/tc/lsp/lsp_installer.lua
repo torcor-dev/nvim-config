@@ -1,10 +1,10 @@
 require("mason").setup()
 local config = require("mason-lspconfig")
-local lsp = require('tc.lsp')
+local lsp = require("tc.lsp")
 
-config.setup {}
+config.setup({})
 config.setup_handlers({
-  function(server)
-    require("lspconfig")[server].setup(lsp)
-  end
+	function(server)
+		require("lspconfig")[server].setup(lsp)
+	end,
 })
