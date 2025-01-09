@@ -10,3 +10,7 @@ R = function(name)
 	RELOAD(name)
 	return require(name)
 end
+
+SO = function()
+	vim.cmd("source " .. vim.fn.stdpath("config") .. "/init.lua")
+end

@@ -9,13 +9,9 @@ return require("packer").startup({
 		use("williamboman/mason.nvim")
 		use("williamboman/mason-lspconfig.nvim")
 		use("neovim/nvim-lspconfig")
-		use("jose-elias-alvarez/null-ls.nvim")
-		use({
-			"j-hui/fidget.nvim",
-			config = function()
-				require("fidget").setup({})
-			end,
-		})
+		use("nvimtools/none-ls.nvim")
+		use({ "nvimtools/none-ls-extras.nvim", requires = "nvimtools/none-ls.nvim" })
+		use("j-hui/fidget.nvim")
 
 		use({
 			"ThePrimeagen/refactoring.nvim",
@@ -92,6 +88,7 @@ return require("packer").startup({
 			requires = "rktjmp/lush.nvim",
 		})
 		use("sam4llis/nvim-tundra")
+		use("AlexvZyl/nordic.nvim")
 
 		use({ "tpope/vim-dispatch", cmd = { "Dispatch", "Make" } })
 

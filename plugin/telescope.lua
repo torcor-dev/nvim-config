@@ -15,12 +15,28 @@ require("telescope").setup({
 				return math.min(max_lines, 25)
 			end,
 		},
+		path_display = {
+			shorten = 5,
+			"filename_first",
+		},
 
 		border = true,
 		borderchars = {
 			prompt = { "─", "│", " ", "│", "╭", "╮", "│", "│" },
 			results = { "─", "│", "─", "│", "├", "┤", "╯", "╰" },
 			preview = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+		},
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--trim",
+			"--hidden",
+			"--ignore-file='~/.config/nvim/.rgignore'",
 		},
 	},
 })
@@ -56,6 +72,7 @@ nmap({ keys = "<leader>qf", action = builtin.quickfix, name = "Quickfix", tag = 
 nmap({ keys = "<leader>rg", action = builtin.live_grep, name = "Live grep", tag = TAG })
 nmap({ keys = "<leader>*", action = builtin.grep_string, name = "Grep string", tag = TAG })
 nmap({ keys = "<leader>b", action = builtin.resume, name = "Resume", tag = TAG })
+nmap({ keys = "<leader>gx", action = builtin.git_commits, name = "Git commits", tag = TAG })
 nmap({ keys = "<c-g><c-r>", action = builtin.command_history, name = "Command history", tag = TAG })
 
 add_cmd("Rg", builtin.live_grep)
