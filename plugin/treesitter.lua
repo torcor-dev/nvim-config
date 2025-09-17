@@ -1,15 +1,11 @@
-if not pcall(require, "nvim-treesitter") then
-	return
-end
-
 require("nvim-treesitter.configs").setup({
-	ensure_installed = { "go", "typescript", "rust", "python" },
-	sync_install = false,
+  ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
 
-	ignore_install = { "phpdoc" },
+  sync_install = false,
 
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+  },
 })
