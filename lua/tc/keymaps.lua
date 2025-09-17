@@ -66,7 +66,7 @@ group(l("e"), "Explore")
 group(l("g"), "Git")
 group(l("q"), "Quickfix")
 group(l("r"), "Refactoring")
-group(l("t"), "Terminal")
+group(l("t"), "Terminal/Tests")
 group(l("x"), "Trouble")
 
 local CLIP_TAG = "[Clip]"

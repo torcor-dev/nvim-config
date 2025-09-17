@@ -116,4 +116,30 @@ return {
 
   { "folke/which-key.nvim", dependencies = { "echasnovski/mini.nvim" } },
   "torcor-dev/todoman.nvim",
+
+  -- Go support
+  {
+    "ray-x/go.nvim",
+    dependencies = {  -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup({
+        test_runner = 'go',
+        run_in_floaterm = false,
+        test_efm = '%f:%l:%c: %m,%-G|| ok%.%#',
+        test_timeout = '30s',
+        test_env = {},
+        test_template = '',
+        test_template_dir = '',
+        test_flags = {'-v'},
+        build_tags = '',
+      })
+    end,
+    event = {"CmdlineEnter"},
+    ft = {"go", 'gomod'},
+    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
+  },
 }
