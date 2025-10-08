@@ -38,14 +38,18 @@ nmap({
 	tag = split_tag,
 })
 
+local function ToggleNetrw()
+    if vim.bo.filetype == 'netrw' then
+        vim.cmd('Rexplore')
+    else
+        vim.cmd('Explore')
+    end
+end
+
 nmap({
 	keys = "<leader>ex",
 	action = function()
-		local function f()
-			vim.cmd([[Rexplore]])
-		end
-
-		if not pcall(f) then
+		if not pcall(ToggleNetrw) then
 			vim.cmd([[Explore]])
 		end
 	end,

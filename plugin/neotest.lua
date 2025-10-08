@@ -7,16 +7,25 @@ local function leader_t(key)
 	return "<leader>t" .. key
 end
 
+local function run(func)
+	neotest.summary.open()
+	func()
+end
+
 local function run_nearest()
-	return neotest.run.run()
+	run(neotest.run.run)
 end
 
 local function run_file()
-	return neotest.run.run(vim.fn.expand("%"))
+	run(function()
+		neotest.run.run(vim.fn.expand("%"))
+	end)
 end
 
 local function run_suite()
-	return neotest.run.run({ suite = true })
+	run(function()
+		neotest.run.run({ suite = true })
+	end)
 end
 
 local function toggle_output_panel()
@@ -36,7 +45,9 @@ local function stop()
 end
 
 local function run_last()
-	require("neotest").run.run_last()
+	run(function()
+		neotest.run.run_last()
+	end)
 end
 
 nmap({ keys = leader_t("n"), action = run_nearest, name = "Run nearest", tag = TAG })
