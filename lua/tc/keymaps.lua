@@ -39,11 +39,11 @@ nmap({
 })
 
 local function ToggleNetrw()
-    if vim.bo.filetype == 'netrw' then
-        vim.cmd('Rexplore')
-    else
-        vim.cmd('Explore')
-    end
+	if vim.bo.filetype == "netrw" then
+		vim.cmd("Rexplore")
+	else
+		vim.cmd("Explore")
+	end
 end
 
 nmap({
@@ -72,6 +72,7 @@ group(l("q"), "Quickfix")
 group(l("r"), "Refactoring")
 group(l("t"), "Terminal/Tests")
 group(l("x"), "Trouble")
+group(l("h"), "Harpoon")
 
 local CLIP_TAG = "[Clip]"
 map({ "n", "v" }, { keys = l("y"), name = '"+y  ', action = '"+y', tag = CLIP_TAG })

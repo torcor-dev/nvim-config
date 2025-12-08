@@ -1,6 +1,7 @@
 return {
 	{ "nvim-treesitter/nvim-treesitter", lazy = false, branch = "main", build = ":TSUpdate" },
 	"nvim-treesitter/nvim-treesitter-context",
+	{ "nvim-treesitter/nvim-treesitter-textobjects", branch = "main" },
 
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
@@ -20,10 +21,12 @@ return {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	},
-
 	{
-		"folke/trouble.nvim",
-		dependencies = "kyazdani42/nvim-web-devicons",
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = {
+			{ "nvim-lua/plenary.nvim" },
+		},
 	},
 	{
 		"jiaoshijie/undotree",
